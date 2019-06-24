@@ -4,7 +4,13 @@ const app = express();
 const utf8 = require('utf8');
 
 app.get('/trips', function(req, res) {
+    let desde = req.query.desde || 0;
+    let hasta = req.query.hasta || 10;
+    desde = Number(desde);
+    hasta = Number(hasta);
     Trip.find({})
+        .skip(desde)
+        .limit(hasta)
         .exec((err, trips) => {
             if (err) {
                 return res.status(400).json({
@@ -18,7 +24,7 @@ app.get('/trips', function(req, res) {
             })
         })
 })
-app.get('/total_trips', function(req, res) {
+app.get('/trips/total_trips', function(req, res) {
     Trip.find({})
         .count()
         .exec((err, trips) => {
@@ -34,11 +40,17 @@ app.get('/total_trips', function(req, res) {
             })
         })
 })
-app.get('/total_trips/city/:city', function(req, res) {
+app.get('/trips/total_trips/city/:city', function(req, res) {
     let city = req.params.city;
+    let desde = req.query.desde || 0;
+    let hasta = req.query.hasta || 10;
+    desde = Number(desde);
+    hasta = Number(hasta);
     city = utf8.decode(city)
     console.log(city);
     Trip.find({ 'city.name': city })
+        .skip(desde)
+        .limit(hasta)
         .count()
         .exec((err, trips) => {
             if (err) {
@@ -53,7 +65,7 @@ app.get('/total_trips/city/:city', function(req, res) {
             })
         })
 })
-app.get('/total_trips/country/:country', function(req, res) {
+app.get('/trips/total_trips/country/:country', function(req, res) {
     let country = req.params.country;
     country = utf8.decode(country)
     Trip.find({ 'country.name': country })
