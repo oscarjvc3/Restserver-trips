@@ -88,28 +88,28 @@ app.get('/trips/total_trips/country/:country', function(req, res) {
 app.post('/trips', function(req, res) {
     let body = req.body;
     let trip = new Trip({
-        "start.date": body.start_date,
+        "start.date": body.start.date,
         "start.pickup_address": body.start_pickup_address,
-        "start.pickup_location.type": body.start_pickup_location,
+        "start.pickup_location.type": body.start_pickup_location_type,
         "start.pickup_location.coordinates": body.start_pickup_location_coordinates,
-        "end.date": body.date_end,
-        "end.pickup_address": body.pickup_address_end,
-        "end.pickup_location.type": body.pickup_location_type,
-        "end.pickup_location.coordinates": body.end_pickup_location_coordinates,
-        "country.name": body.name_country,
-        "city.name": body.name_city,
-        "passenger.first_name": body.first_name_passenger,
-        "passenger.last_name": body.last_name_passenger,
-        "driver.first_name": body.first_name_driver,
-        "driver.last_name": body.last_name_drive,
-        "car.plate": body.plate,
-        status: body.status,
+        "end.date": body.end_date,
+        "end.pickup_address": body.end_pickup_address,
+        "end.pickup_location.type": body.end_pickup_location.type,
+        "end.pickup_location.coordinates": body.end_pickup_location.coordinates,
+        "country.name": body.country_name,
+        "city.name": body.city_name,
+        "passenger.first_name": body.passenger_first_name,
+        "passenger.last_name": body.passenger_last_name,
+        "driver.first_name": body.driver_first_name,
+        "driver.last_name": body.driver_last_name,
+        "car.plate": body.car_plate,
+        status: body_status,
         check_code: body.check_code,
-        "createdAt.date": body.date_createdAt,
-        "updateAt.date": body.date_updateAt,
+        "createdAt.date": body.createdAt_date,
+        "updateAt.date": body.updateAt_date,
         price: body.price,
-        "driver_location.type": body.type_driver_location,
-        "driver_location.coordinates": body.coordinates_driver_location
+        "driver_location.type": body.driver_location_type,
+        "driver_location.coordinates": body.driver_location_coordinates
     });
 
     trip.save((err, tripDB) => {
