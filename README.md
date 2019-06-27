@@ -11,13 +11,13 @@ Para la creacion del API Rest de los trips de Mi aguila construi un una peticion
     d. Consultar los viajes actuales:
 
         Para la extraccion de los viajes en la peticion get: 
-        ```
+        
         https://cryptic-everglades-11046.herokuapp.com/trips
-        ``` 
+         
         ,diseñe una estrtegia de paginacion:
-        ```
+        
         https://cryptic-everglades-11046.herokuapp.com/trips?desde=0&hasta=30   
-        ```
+        
 
 Para crear un viaje realice una peticion POST, con formato x-www-form-urlencoded para los parametros de entrada.
 
