@@ -42,8 +42,6 @@ app.get('/trips/total_trips', function(req, res) {
 })
 app.get('/trips/total_trips/city/:city', function(req, res) {
     let city = req.params.city;
-    let desde = req.query.desde || 0;
-    let hasta = req.query.hasta || 10;
     desde = Number(desde);
     hasta = Number(hasta);
     city = utf8.decode(city)
