@@ -13,8 +13,8 @@ Para la creacion del API Rest de los trips de Mi aguila construi un una peticion
         Para la extraccion de los viajes en la peticion get: 
         ```
         https://cryptic-everglades-11046.herokuapp.com/trips
-        ``` , diseñe una estrtegia de paginacion. 
-
+        ``` 
+        ,diseñe una estrtegia de paginacion:
         ```
         https://cryptic-everglades-11046.herokuapp.com/trips?desde=0&hasta=30   
         ```
