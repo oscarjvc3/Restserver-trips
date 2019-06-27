@@ -88,14 +88,14 @@ app.get('/trips/total_trips/country/:country', function(req, res) {
 app.post('/trips', function(req, res) {
     let body = req.body;
     let trip = new Trip({
-        "start.date": body.start.date,
+        "start.date": body.start_date,
         "start.pickup_address": body.start_pickup_address,
         "start.pickup_location.type": body.start_pickup_location_type,
         "start.pickup_location.coordinates": body.start_pickup_location_coordinates,
         "end.date": body.end_date,
         "end.pickup_address": body.end_pickup_address,
-        "end.pickup_location.type": body.end_pickup_location.type,
-        "end.pickup_location.coordinates": body.end_pickup_location.coordinates,
+        "end.pickup_location.type": body.end_pickup_location_type,
+        "end.pickup_location.coordinates": body.end_pickup_location_coordinates,
         "country.name": body.country_name,
         "city.name": body.city_name,
         "passenger.first_name": body.passenger_first_name,
@@ -103,7 +103,7 @@ app.post('/trips', function(req, res) {
         "driver.first_name": body.driver_first_name,
         "driver.last_name": body.driver_last_name,
         "car.plate": body.car_plate,
-        status: body_status,
+        status: body.status,
         check_code: body.check_code,
         "createdAt.date": body.createdAt_date,
         "updateAt.date": body.updateAt_date,
