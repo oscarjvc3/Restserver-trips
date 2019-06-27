@@ -1,17 +1,28 @@
 ## API rest Trips 
 
 Para la creacion del API Rest de los trips de Mi aguila construi un una peticion GET para las siguientes consultas:
+
     a. Consultar la cantidad de viajes totales.
+
     b. Consultar la cantidad de viajes totales por ciudad.
+
     c. Consultar la cantidad de viajes totales por país.
+
     d. Consultar los viajes actuales:
-        Para la extraccion de los viajes en la peticion get: https://cryptic-everglades-11046.herokuapp.com/trips, diseñe una estrtegia de paginacion. 
+
+        Para la extraccion de los viajes en la peticion get: 
+        ```
+        https://cryptic-everglades-11046.herokuapp.com/trips
+        ``` , diseñe una estrtegia de paginacion. 
+
         ```
         https://cryptic-everglades-11046.herokuapp.com/trips?desde=0&hasta=30   
         ```
 
 Para crear un viaje realice una peticion POST, con formato x-www-form-urlencoded para los parametros de entrada.
+
 Para actualizar un viaje realice una peticion PUT, con formato x-www-form-urlencoded para los registros a actializar.
+
 
 La documentacion en swagger de la API : 
 ```
